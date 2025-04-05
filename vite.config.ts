@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
+	base: '/saoris-personal-website/',
 	plugins: [react(), tailwindcss()],
 	resolve: {
 		alias: {
