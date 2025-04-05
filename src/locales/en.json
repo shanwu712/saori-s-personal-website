@@ -1,4 +1,18 @@
 {
 	"TSW": "TING HSUAN, WU",
-	"whoAmI": "Who am I?"
+	"whoAmI": "Who am I?",
+	"quickIntro": "I am a senior student majoring in Japanese at a university in Taiwan, expecting to graduate in June 2025. After graduation, I plan to start my career as a frontend engineer in Japan, using my Japanese/English/Chinese language skills and technical skills to provide users with valuable products.",
+	"githubBtn": "Check out my Github profile",
+	"whyFrontend": "Why I Learn Frontend Development?",
+	"frontendRoadmap": "My Frontend Development Self-Learning Roadmap",
+	"whyFrontendDescription": "I originally majored in Japanese, and many of my peers tend to pursue careers in the service industry after graduation. However, I felt that it wasn’t the right fit for me. I actually worked part-time in customer service and realized that I wasn’t very comfortable in an environment where I had to interact with many unfamiliar customers every day.\nOf course, it’s not that I dislike talking to people—I do enjoy working as part of a team—but I prefer a calmer environment where I can make use of specialized skills. That’s why I decided to start learning programming, something I had always been interested in, and gradually became drawn to frontend development.",
+	"howFrontend": "How I Learn Frontend Development?",
+	"howFrontendTitle1": "2024 Feb-Mar. My First Step into Coding",
+	"howFrontendDetails1": "At the start of 2024, I wasn’t sure if programming was the right fit for me. Out of curiosity, I started learning basic HTML/CSS/JavaScript from scratch on <a href='https://www.freecodecamp.org/' target='_blank'>freeCodeCamp</a>. The way the platform taught—through hands-on coding challenges and bite-sized lessons—really worked for me. Slowly but surely, I got used to writing code and started enjoying the process of solving problems.",
+	"howFrontendTitle2": "2024 Apr-Jun. Realizing My Passion",
+	"howFrontendDetails2": "After completing the course on freeCodeCamp, I realized I genuinely have interest in programming. So I challenged myself with an <a href='https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/' target='_blank'>advanced JavaScript course</a> on Udemy.\nThis deeper dive helped me understand core concepts of the JavaScript language more clearly, and I began to feel confident writing code on my own. That’s when I found myself especially drawn to frontend development—because I loved building things that people can actually see and interact with.",
+	"howFrontendTitle3": "2024 Jul-Aug. Entering the React World",
+	"howFrontendDetails3": "To actually dive into the frontend world, I decided to start learning React.js. I followed a hands-on <a href='https://www.udemy.com/course/the-ultimate-react-course/' target='_blank'>React course</a> that focused on building projects, from simple tools to more complete apps.\nThrough these projects, I got a feel for how powerful and flexible modern frontend development can be.",
+	"howFrontendTitle4": "2024 Sep-2025 Now. From Learning to Doing",
+	"howFrontendDetails4": "After finishing the advanced JS course on Udemy, I built a small side project with Vanilla JS and used it to apply for internships. I eventually got a frontend internship offer, where I started contributing to real toB/toC SaaS products.\nI started using TypeScript with React in a production environment and collaborated with the team using Git and GitHub. It was a huge step forward turning everything I’d learned into something real."
 }
