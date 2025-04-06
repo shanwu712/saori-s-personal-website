@@ -9,10 +9,20 @@
 	"frontendRoadmap": "フロントエンド独学ロードマップ",
 	"howFrontendTitle1": "2024年2月-3月 初めてのコードの世界へ",
 	"howFrontendDetails1": "2024年の初め、プログラミングが自分に合っているかどうかわからなかったので、好奇心から<a href='https://www.freecodecamp.org/' target='_blank'>freeCodeCamp</a>でHTML/CSS/JavaScriptの基礎を独学で学び始めました。 このプラットフォームの教え方は、実際にコードを書きながら学ぶスタイルで、少しずつ慣れていき、問題を解決する過程を楽しむようになりました。",
-	"howFrontendTitle2": "2024年4月-6月 自分の情熱を実感",
+	"howFrontendTitle2": "2024年4月-6月 フロントエンドの魅力を実感",
 	"howFrontendDetails2": "コースを終えた後、プログラミングが本当に好きだと気づきました。そこで、Udemyの<a href='https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/' target='_blank'>上級JavaScriptコース</a>に挑戦しました。\nこの深い学びを通じて、コアな概念をより明確に理解できるようになり、自分でコードを書く自信がつきました。特にフロントエンド開発に魅力を感じるようになったのは、人々が実際に目に見えるものを作ることができるからです。",
 	"howFrontendTitle3": "2024年7月-8月 Reactの世界へ",
 	"howFrontendDetails3": "フロントエンドの世界に本格的に飛び込むため、React.jsの学習を始めました。Udemyの<a href='https://www.udemy.com/course/the-ultimate-react-course/' target='_blank'>Reactコース</a>を受講し、シンプルなツールからより完成度の高いアプリまで、プロジェクトを通じて学びました。\nこれらのプロジェクトを通じて、現代のフロントエンド開発がどれほど強力で柔軟であるかを実感しました。",
 	"howFrontendTitle4": "2024年9月-2025 現在 学びから実践へ",
-	"howFrontendDetails4": "Udemyでの上級JavaScriptコースを終えた後、Vanilla JSで小さなサイドプロジェクトを作成し、それを使ってインターンシップに応募しました。最終的にフロントエンドのインターンシップのオファーを受け、実際のtoB/toC SaaSプロダクトに貢献し始めました。\n本番環境でReactとTypeScriptを使用し、GitとGitHubを使ってチームと協力しました。学んできたことを実際のものにする大きな一歩でした。"
+	"howFrontendDetails4": "Udemyでの上級JavaScriptコースを終えた後、Vanilla JSで小さなサイドプロジェクトを作成し、それを使ってインターンシップに応募しました。最終的にフロントエンドのインターンシップのオファーを受け、実際のtoB/toC SaaSプロダクトに貢献し始めました。\n本番環境でReactとTypeScriptを使用し、GitとGitHubを使ってチームと協力しました。学んできたことを実際のものにする大きな一歩でした。",
+	"mySideProjects": "私のサイドプロジェクト",
+	"hoverToSee": "プロジェクトのウェブサイトやGitHubリポジトリのリンクを表示するには、ホバーしてください！",
+	"nihongoDescription": "学んだ技術を実際に使った最初のプロジェクト。フロントエンドフレームワークやバックエンド/データベースの概念を学ぶ前だったので、Vanilla JSとlocalStorageを使って構築しました。",
+	"nihongoDetails": "日本語学習者として、Nihongo Reciterは、私が作成したリストからランダムに選ばれた語彙でテストすることで、最近学んだ語彙をより効率的に復習できる方法を提供します。",
+	"handDripperDescription": "React.jsをベースにしたフロントエンドフレームワークの概念/知識を知った後、理解度を試すために、TS+React+Viteを使ってHandDripperを作成しました。",
+	"handDripperDetails": "ハンドドリップコーヒーの初心者として、良いコーヒーを淹れるためにいくつかの問題に直面しました。HandDripperは、私が開発した便利な機能の数々でこれらの問題を解決するためのものです。",
+	"furtherInfo": "詳細については、GitHubリポジトリのREADMEをご覧ください",
+	"checkApp": "{{title}}アプリをチェック！",
+	"repoOfApp": "{{title}}のGitHubリポジトリ",
+	"checkRepo": "GitHubで{{title}}のソースコードをチェック！"
 }

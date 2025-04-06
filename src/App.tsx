@@ -12,10 +12,46 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from '@/components/ui/sheet';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
+import {
+	NavigationMenu,
+	NavigationMenuContent,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
+import { t } from 'i18next';
 
 function App() {
 	const [isSheetOpen, setIsSheetOpen] = useState(false);
 	const { t, i18n } = useTranslation();
+
+	const portfolioCardItems = [
+		{
+			title: 'Nihongo Reciter',
+			description: t('nihongoDescription'),
+			image: `${import.meta.env.BASE_URL}nihongo.png`,
+			details: t('nihongoDetails'),
+			webURL: 'https://shanwu712.github.io/nihongo-reciter/',
+			repoURL: 'https://github.com/shanwu712/nihongo-reciter',
+		},
+		{
+			title: 'HandDripper',
+			description: t('handDripperDescription'),
+			image: `${import.meta.env.BASE_URL}handDripper.png`,
+			details: t('handDripperDetails'),
+			webURL: 'https://hand-dripper.vercel.app/',
+			repoURL: 'https://github.com/shanwu712/HandDripper',
+		},
+	];
 
 	useEffect(() => {
 		AOS.init({ once: false, mirror: true });
@@ -115,8 +151,120 @@ function App() {
 					</SheetContent>
 				</Sheet>
 			</div>
+			<div className="snap-start h-[100vh] w-full gap-14 relative bg-slate-50 flex flex-col items-center justify-center pb-14 lg:pb-36">
+				<div className="flex flex-col items-center gap-1 z-10">
+					<p className="text-5xl font-bold">{t('mySideProjects')}</p>
+					<p>{t('hoverToSee')}</p>
+				</div>
+
+				<NavigationMenu>
+					<NavigationMenuList>
+						{portfolioCardItems.map(
+							({ title, description, image, details, webURL, repoURL }) => (
+								<NavigationPortfolioCard
+									key={title}
+									title={title}
+									description={description}
+									image={image}
+									details={details}
+									webURL={webURL}
+									repoURL={repoURL}
+								/>
+							)
+						)}
+					</NavigationMenuList>
+				</NavigationMenu>
+			</div>
 		</div>
 	);
 }
 
 export default App;
+
+interface PortfolioCardProps {
+	title: string;
+	description: string;
+	image: string;
+	details?: string;
+}
+
+function PortfolioCard({
+	title,
+	description,
+	image,
+	details,
+}: PortfolioCardProps) {
+	return (
+		<Card className="min-w-96 w-[30vw] min-h-[32rem] overflow-hidden transition-all duration-300 hover:shadow-lg">
+			<div className="relative aspect-video overflow-hidden bg-amber-100">
+				<img src={image} alt="HandDripper Logo" />
+			</div>
+			<CardHeader>
+				<CardTitle>{title}</CardTitle>
+				<CardDescription className="text-stone-700">
+					{description}
+				</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<div>{details}</div>
+			</CardContent>
+			<CardFooter className="text-xs text-stone-500">
+				{t('furtherInfo')}
+			</CardFooter>
+		</Card>
+	);
+}
+
+function NavigationPortfolioCard(item: {
+	title: string;
+	description: string;
+	image: string;
+	details: string;
+	webURL: string;
+	repoURL: string;
+}) {
+	return (
+		<NavigationMenuItem>
+			<NavigationMenuTrigger>
+				<PortfolioCard
+					title={item.title}
+					description={item.description}
+					image={item.image}
+					details={item.details}
+				/>
+			</NavigationMenuTrigger>
+			<NavigationMenuContent className="w-fit">
+				<ul className="flex flex-col gap-2 p-1">
+					<li>
+						<NavigationMenuLink asChild>
+							<a
+								className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-2 no-underline outline-none focus:shadow-md"
+								href={item.webURL}
+							>
+								<div className="mb-0.5 mt-1 font-semibold">{item.title}</div>
+								<p className="text-sm leading-tight text-muted-foreground">
+									{t('checkApp', { title: item.title })}
+								</p>
+							</a>
+						</NavigationMenuLink>
+					</li>
+					<li>
+						<NavigationMenuLink asChild>
+							<a
+								className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-3 no-underline outline-none focus:shadow-md"
+								href={item.repoURL}
+							>
+								<div className="mb-0.5 mt-1 font-semibold">
+									{t('repoOfApp', { title: item.title })}
+								</div>
+								<p className="text-sm leading-tight text-muted-foreground text-nowrap">
+									{t('checkRepo', { title: item.title })}
+								</p>
+							</a>
+						</NavigationMenuLink>
+					</li>
+				</ul>
+			</NavigationMenuContent>
+		</NavigationMenuItem>
+	);
+}

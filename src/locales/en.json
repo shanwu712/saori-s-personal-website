@@ -9,10 +9,20 @@
 	"howFrontend": "How I Learn Frontend Development?",
 	"howFrontendTitle1": "2024 Feb-Mar. My First Step into Coding",
 	"howFrontendDetails1": "At the start of 2024, I wasn’t sure if programming was the right fit for me. Out of curiosity, I started learning basic HTML/CSS/JavaScript from scratch on <a href='https://www.freecodecamp.org/' target='_blank'>freeCodeCamp</a>. The way the platform taught—through hands-on coding challenges and bite-sized lessons—really worked for me. Slowly but surely, I got used to writing code and started enjoying the process of solving problems.",
-	"howFrontendTitle2": "2024 Apr-Jun. Realizing My Passion",
+	"howFrontendTitle2": "2024 Apr-Jun. Realizing My Passion on Frontend Development",
 	"howFrontendDetails2": "After completing the course on freeCodeCamp, I realized I genuinely have interest in programming. So I challenged myself with an <a href='https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/' target='_blank'>advanced JavaScript course</a> on Udemy.\nThis deeper dive helped me understand core concepts of the JavaScript language more clearly, and I began to feel confident writing code on my own. That’s when I found myself especially drawn to frontend development—because I loved building things that people can actually see and interact with.",
 	"howFrontendTitle3": "2024 Jul-Aug. Entering the React World",
 	"howFrontendDetails3": "To actually dive into the frontend world, I decided to start learning React.js. I followed a hands-on <a href='https://www.udemy.com/course/the-ultimate-react-course/' target='_blank'>React course</a> that focused on building projects, from simple tools to more complete apps.\nThrough these projects, I got a feel for how powerful and flexible modern frontend development can be.",
 	"howFrontendTitle4": "2024 Sep-2025 Now. From Learning to Doing",
-	"howFrontendDetails4": "After finishing the advanced JS course on Udemy, I built a small side project with Vanilla JS and used it to apply for internships. I eventually got a frontend internship offer, where I started contributing to real toB/toC SaaS products.\nI started using TypeScript with React in a production environment and collaborated with the team using Git and GitHub. It was a huge step forward turning everything I’d learned into something real."
+	"howFrontendDetails4": "After finishing the advanced JS course on Udemy, I built a small side project with Vanilla JS and used it to apply for internships. I eventually got a frontend internship offer, where I started contributing to real toB/toC SaaS products.\nI started using TypeScript with React in a production environment and collaborated with the team using Git and GitHub. It was a huge step forward turning everything I’d learned into something real.",
+	"mySideProjects": "My Side Projects",
+	"hoverToSee": "Hover to see the links of project website or github repo!",
+	"nihongoDescription": "The first project actually using the techniques I had learned. At that time, I hadn't learned the concept of frontend framework and backend/database yet, so it's built with Vanilla JS, and localStorage for data storage.",
+	"nihongoDetails": "As a Japanese learner, Nihongo Reciter provides a more efficient way to review the vocabularies I recently learned by testing me with vocabularies randomly picked from the list I created.",
+	"handDripperDescription": "After knowing the concept/knowledge of frontend framework based on React.js through online courses, to test my understanding of them, I created HandDripper using TS+React+Vite.",
+	"handDripperDetails": "As a rookie of hand-drip coffee, I faced a few problems when I was trying to make a cup of good coffee. HandDripper is to solve these problems with a bunch of useful features I developed.",
+	"furtherInfo": "For further info, please checkout the readme on github repo",
+	"checkApp": "Check out the {{title}} app!",
+	"repoOfApp": "Github Repository of {{title}}",
+	"checkRepo": "Check out the source code of {{title}} on github!"
 }
