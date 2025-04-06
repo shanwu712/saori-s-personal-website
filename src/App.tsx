@@ -23,7 +23,12 @@ function App() {
 	}, []);
 	return (
 		<div className="h-screen overflow-y-auto snap-y snap-mandatory bg-gray-100">
-			<div className="bg-[url('./bg.JPG')] bg-cover h-[100vh] flex flex-col snap-start">
+			<div
+				style={{
+					backgroundImage: `url(${import.meta.env.BASE_URL}bg.JPG)`,
+				}}
+				className="bg-cover h-[100vh] flex flex-col snap-start"
+			>
 				<header className="text-4xl justify-between font-black flex py-3 px-8 bg-white">
 					<p>{t('whoAmI')}</p>
 					<LanguagesToggle />
