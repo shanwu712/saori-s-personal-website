@@ -70,7 +70,7 @@ function App() {
 					<LanguagesToggle />
 				</header>
 				<div
-					className="flex items-center h-full justify-between gap-12  px-36"
+					className="flex items-center h-full justify-between gap-14 px-36"
 					data-aos="fade-right"
 				>
 					<div className="text-slate-50 flex-1 flex gap-6 flex-col text-shadow-lg">
@@ -157,29 +157,34 @@ function App() {
 					</SheetContent>
 				</Sheet>
 			</div>
-			<div className="snap-start h-[100vh] w-full gap-14 relative bg-stone-50 flex flex-col items-center justify-center pb-14 lg:pb-36">
-				<div className="flex flex-col items-center gap-2 z-10">
-					<p className="text-5xl font-bold">{t('mySideProjects')}</p>
-					<p>{t('hoverToSee')}</p>
-				</div>
+			<div className="snap-start h-[100vh] w-full relative bg-stone-50 flex flex-col items-center justify-center ">
+				<div className="flex-1 flex flex-col mt-4 gap-4 xl:mt-12 xl:gap-14">
+					<div className="flex flex-col items-center gap-2 z-10">
+						<p className="text-5xl font-bold">{t('mySideProjects')}</p>
+						<p>{t('hoverToSee')}</p>
+					</div>
 
-				<NavigationMenu>
-					<NavigationMenuList>
-						{portfolioCardItems.map(
-							({ title, description, image, details, webURL, repoURL }) => (
-								<NavigationPortfolioCard
-									key={title}
-									title={title}
-									description={description}
-									image={image}
-									details={details}
-									webURL={webURL}
-									repoURL={repoURL}
-								/>
-							)
-						)}
-					</NavigationMenuList>
-				</NavigationMenu>
+					<NavigationMenu>
+						<NavigationMenuList>
+							{portfolioCardItems.map(
+								({ title, description, image, details, webURL, repoURL }) => (
+									<NavigationPortfolioCard
+										key={title}
+										title={title}
+										description={description}
+										image={image}
+										details={details}
+										webURL={webURL}
+										repoURL={repoURL}
+									/>
+								)
+							)}
+						</NavigationMenuList>
+					</NavigationMenu>
+				</div>
+				<footer className="bg-stone-700 text-stone-100 text-lg bottom-0 w-full py-4 text-center">
+					<p>My Email address: shanwu712@icloud.com</p>
+				</footer>
 			</div>
 		</div>
 	);
