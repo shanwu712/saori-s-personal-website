@@ -60,27 +60,33 @@ function App() {
 	return (
 		<div className="h-screen overflow-y-auto snap-y snap-mandatory bg-gray-100">
 			<div
-				style={{
-					backgroundImage: `url(${import.meta.env.BASE_URL}bg.JPG)`,
-				}}
-				className="bg-cover h-[100vh] flex flex-col snap-start"
+				// style={{
+				// 	backgroundImage: `url(${import.meta.env.BASE_URL}bg.JPG)`,
+				// }}
+				className="bg-cover bg-stone-900 h-[100vh] flex flex-col snap-start"
 			>
-				<header className="text-4xl justify-between font-black flex py-3 px-8 bg-white">
+				<header className="text-4xl justify-between font-black flex py-3 px-8 bg-stone-100">
 					<p>{t('whoAmI')}</p>
 					<LanguagesToggle />
 				</header>
-				<div className="flex-1 flex items-center pl-36" data-aos="fade-right">
-					<div className="text-slate-50 flex gap-6 flex-col text-shadow-lg">
+				<div
+					className="flex items-center h-full justify-between gap-12  px-36"
+					data-aos="fade-right"
+				>
+					<div className="text-slate-50 flex-1 flex gap-6 flex-col text-shadow-lg">
 						<p className="text-6xl font-bold ">{t('TSW')}</p>
-						<span className="w-3/4 flex text-lg font-bold">
-							{t('quickIntro')}
-						</span>
-						<Button className="w-fit">
+						<span className="flex text-lg font-bold">{t('quickIntro')}</span>
+						<Button className="w-fit bg-stone-100 text-stone-800 hover:bg-stone-300 font-semibold">
 							<a href="https://github.com/shanwu712" target="_blank">
 								{t('githubBtn')}
 							</a>
 						</Button>
 					</div>
+					<img
+						src={`${import.meta.env.BASE_URL}myPhoto.png`}
+						alt="myPhoto"
+						className="w-72"
+					/>
 				</div>
 			</div>
 			<div className="bg-amber-50 snap-start h-[100vh] gap-10 flex flex-col items-center justify-center lg:gap-16">
@@ -151,8 +157,8 @@ function App() {
 					</SheetContent>
 				</Sheet>
 			</div>
-			<div className="snap-start h-[100vh] w-full gap-14 relative bg-slate-50 flex flex-col items-center justify-center pb-14 lg:pb-36">
-				<div className="flex flex-col items-center gap-1 z-10">
+			<div className="snap-start h-[100vh] w-full gap-14 relative bg-stone-50 flex flex-col items-center justify-center pb-14 lg:pb-36">
+				<div className="flex flex-col items-center gap-2 z-10">
 					<p className="text-5xl font-bold">{t('mySideProjects')}</p>
 					<p>{t('hoverToSee')}</p>
 				</div>
