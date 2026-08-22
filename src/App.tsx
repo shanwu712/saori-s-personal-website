@@ -1,17 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import './App.css';
 import { LanguagesToggle } from '@/LanguagesToggle';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ExternalLink, Github, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-	Sheet,
-	SheetContent,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
-} from '@/components/ui/sheet';
 import {
 	Card,
 	CardContent,
@@ -20,18 +14,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
-import {
-	NavigationMenu,
-	NavigationMenuContent,
-	NavigationMenuItem,
-	NavigationMenuLink,
-	NavigationMenuList,
-	NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
 import { t } from 'i18next';
 
 function App() {
-	const [isSheetOpen, setIsSheetOpen] = useState(false);
 	const { t, i18n } = useTranslation();
 
 	const portfolioCardItems = [
@@ -53,137 +38,145 @@ function App() {
 		},
 	];
 
+	const timelineEntries = [
+		{ title: t('howFrontendTitle1'), details: t('howFrontendDetails1') },
+		{ title: t('howFrontendTitle2'), details: t('howFrontendDetails2') },
+		{ title: t('howFrontendTitle3'), details: t('howFrontendDetails3') },
+		{ title: t('howFrontendTitle4'), details: t('howFrontendDetails4') },
+	];
+
 	useEffect(() => {
 		AOS.init({ once: false, mirror: true });
 		AOS.refresh();
 	}, []);
+
 	return (
-		<div className="h-screen overflow-y-auto snap-y snap-mandatory bg-gray-100">
-			<div
-				// style={{
-				// 	backgroundImage: `url(${import.meta.env.BASE_URL}bg.JPG)`,
-				// }}
-				className="bg-cover bg-stone-900 h-[100vh] flex flex-col snap-start"
-			>
-				<header className="text-4xl justify-between font-black flex py-3 px-8 bg-stone-100">
-					<p>{t('whoAmI')}</p>
+		<div className="h-screen overflow-y-auto snap-y snap-mandatory bg-background">
+			{/* ---------- Hero ---------- */}
+			<div className="grain relative flex min-h-[100dvh] flex-col snap-start overflow-hidden bg-background">
+				<div
+					className="absolute inset-0 bg-cover bg-center opacity-[0.18]"
+					style={{
+						backgroundImage: `url(${import.meta.env.BASE_URL}bg.JPG)`,
+					}}
+				/>
+				<div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/70" />
+
+				<header className="relative z-10 flex items-center justify-between border-b border-border px-6 py-4 sm:px-10">
+					<p className="font-display text-xl tracking-wide sm:text-2xl">
+						{t('brandName')}
+					</p>
 					<LanguagesToggle />
 				</header>
-				<div
-					className="flex items-center h-full justify-between gap-14 px-36"
-					data-aos="fade-right"
+
+				<span
+					aria-hidden
+					className="writing-vertical pointer-events-none absolute left-4 top-1/2 z-10 hidden -translate-y-1/2 text-xs tracking-[0.3em] text-muted-foreground sm:block sm:left-6 lg:left-10"
 				>
-					<div className="text-slate-50 flex-1 flex gap-6 flex-col text-shadow-lg">
-						<p className="text-6xl font-bold ">{t('TSW')}</p>
-						<span className="flex text-lg font-bold">{t('quickIntro')}</span>
-						<Button className="w-fit bg-stone-100 text-stone-800 hover:bg-stone-300 font-semibold">
-							<a href="https://github.com/shanwu712" target="_blank">
+					{i18n.language === 'ja' ? 'フロントエンド エンジニア' : 'FRONTEND ENGINEER'}
+				</span>
+
+				<div
+					className="relative z-10 flex flex-1 flex-col items-center justify-center gap-12 px-6 py-16 sm:px-12 lg:flex-row lg:items-center lg:justify-between lg:gap-14 lg:px-24 lg:pl-28"
+					data-aos="fade-up"
+				>
+					<div className="flex max-w-xl flex-1 flex-col items-center gap-6 text-center lg:items-start lg:text-left">
+						<p className="font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
+							{t('TSW')}
+						</p>
+						<span className="max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+							{t('quickIntro')}
+						</span>
+						<Button asChild size="lg" className="w-fit">
+							<a href="https://github.com/shanwu712" target="_blank" rel="noreferrer">
 								{t('githubBtn')}
 							</a>
 						</Button>
 					</div>
-					<img
-						src={`${import.meta.env.BASE_URL}myPhoto.png`}
-						alt="myPhoto"
-						className="w-72"
-					/>
+					<div className="relative shrink-0">
+						<div className="absolute -inset-3 rounded-2xl border border-primary/30" />
+						<img
+							src={`${import.meta.env.BASE_URL}myPhoto.png`}
+							alt="Portrait of TingHsuan Wu"
+							className="relative w-56 rounded-xl object-cover shadow-2xl shadow-black/50 sm:w-72"
+						/>
+					</div>
 				</div>
 			</div>
-			<div className="bg-amber-50 snap-start h-[100vh] gap-10 flex flex-col items-center justify-center lg:gap-16">
-				<div
-					className={`flex flex-col gap-10 justify-center transition-all duration-500  ${
-						isSheetOpen
-							? 'items-start transform translate-x-[-40%] w-1/2 px-14'
-							: 'items-center transform translate-x-0 lg:gap-16'
-					}`}
-				>
-					<p className="text-4xl font-bold">{t('whyFrontend')}</p>
-					<span
-						className={`text-lg ${
-							isSheetOpen ? 'text-left' : 'text-center w-2/3'
-						}`}
-					>
+
+			{/* ---------- Why Frontend ---------- */}
+			<div className="grain relative flex h-[100dvh] snap-start flex-col items-center justify-center gap-8 overflow-hidden bg-card px-6 py-8 sm:gap-10 sm:py-10">
+				<div className="flex w-full max-w-2xl shrink-0 flex-col items-center gap-3 text-center">
+					<p className="font-display text-2xl leading-snug sm:text-3xl lg:text-4xl">
+						{t('whyFrontend')}
+					</p>
+					<span className="max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
 						{t('whyFrontendDescription')}
 					</span>
 				</div>
-				<Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-					<SheetTrigger
-						asChild
-						className={`${isSheetOpen ? 'hidden' : 'flex items-center'}`}
-					>
-						<Button className="text-lg">{t('howFrontend')}</Button>
-					</SheetTrigger>
-					<SheetContent className="overflow-y-auto max-w-[40vw] w-full pb-2">
-						<SheetHeader>
-							<SheetTitle className="font-black text-xl">
-								{t('frontendRoadmap')}
-							</SheetTitle>
-						</SheetHeader>
-						<div className="flex flex-col px-8 text-lg whitespace-pre-line gap-5 [&_a]:text-blue-600 [&_a]:underline [&_a]:hover:underline-offset-4">
-							<span>
-								<p className="font-bold">{t('howFrontendTitle1')}</p>
-								<p
-									className={`${i18n.language === 'ja' ? 'text-base' : ''}`}
-									dangerouslySetInnerHTML={{
-										__html: t('howFrontendDetails1'),
-									}}
-								/>
-							</span>
-							<span>
-								<p className="font-bold">{t('howFrontendTitle2')}</p>
-								<p
-									className={`${i18n.language === 'ja' ? 'text-base' : ''}`}
-									dangerouslySetInnerHTML={{
-										__html: t('howFrontendDetails2'),
-									}}
-								/>
-							</span>
-							<span>
-								<p className="font-bold">{t('howFrontendTitle3')}</p>
-								<p
-									className={`${i18n.language === 'ja' ? 'text-base' : ''}`}
-									dangerouslySetInnerHTML={{
-										__html: t('howFrontendDetails3'),
-									}}
-								/>
-							</span>
-							<span>
-								<p className="font-bold">{t('howFrontendTitle4')}</p>
-								<p className={`${i18n.language === 'ja' ? 'text-base' : ''}`}>
-									{t('howFrontendDetails4')}
+
+				<div className="flex w-full max-w-5xl shrink-0 flex-col gap-4">
+					<p className="text-center font-display text-lg sm:text-xl">
+						{t('howFrontend')}
+					</p>
+					<div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 sm:grid sm:grid-cols-4 sm:overflow-visible sm:pb-0">
+						{timelineEntries.map(({ title, details }) => (
+							<div
+								key={title}
+								className="relative min-w-[70%] shrink-0 snap-start border-t-2 border-primary/50 pt-4 sm:min-w-0"
+							>
+								<span className="absolute -top-[5px] left-0 size-2.5 rounded-full bg-primary" />
+								<p className="font-display text-sm leading-snug sm:text-base">
+									{title}
 								</p>
-							</span>
-						</div>
-					</SheetContent>
-				</Sheet>
+								<p
+									className="mt-1.5 line-clamp-5 text-xs leading-relaxed text-muted-foreground sm:line-clamp-6 [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4"
+									dangerouslySetInnerHTML={{ __html: details }}
+								/>
+							</div>
+						))}
+					</div>
+				</div>
 			</div>
-			<div className="snap-start h-[100vh] w-full relative bg-stone-50 flex flex-col items-center justify-center ">
-				<div className="flex-1 flex flex-col mt-4 gap-4 xl:mt-12 xl:gap-14">
-					<div className="flex flex-col items-center gap-2 z-10">
-						<p className="text-5xl font-bold">{t('mySideProjects')}</p>
-						<p>{t('hoverToSee')}</p>
+
+			{/* ---------- Side Projects ---------- */}
+			<div className="grain relative flex min-h-[100dvh] w-full snap-start flex-col items-center justify-center bg-background">
+				<div className="relative z-10 flex flex-1 flex-col items-center justify-center gap-10 px-6 py-16 xl:gap-14">
+					<div className="flex flex-col items-center gap-2 text-center">
+						<p className="font-display text-4xl sm:text-5xl">
+							{t('mySideProjects')}
+						</p>
+						<p className="text-sm text-muted-foreground sm:text-base">
+							{t('sideProjectsSubtitle')}
+						</p>
 					</div>
 
-					<NavigationMenu>
-						<NavigationMenuList>
-							{portfolioCardItems.map(
-								({ title, description, image, details, webURL, repoURL }) => (
-									<NavigationPortfolioCard
-										key={title}
-										title={title}
-										description={description}
-										image={image}
-										details={details}
-										webURL={webURL}
-										repoURL={repoURL}
-									/>
-								)
-							)}
-						</NavigationMenuList>
-					</NavigationMenu>
+					<div className="grid w-full max-w-4xl gap-8 sm:grid-cols-2">
+						{portfolioCardItems.map((item) => (
+							<PortfolioCard key={item.title} {...item} />
+						))}
+					</div>
 				</div>
-				<footer className="bg-stone-700 text-stone-100 text-lg bottom-0 w-full py-4 text-center">
-					<p>My Email address: shanwu712@icloud.com</p>
+				<footer className="relative z-10 flex w-full flex-col items-center gap-3 border-t border-border bg-card px-6 py-6 text-sm text-muted-foreground sm:flex-row sm:justify-between sm:px-12">
+					<p>&copy; {new Date().getFullYear()} TingHsuan Wu</p>
+					<div className="flex items-center gap-5">
+						<a
+							href="mailto:shanwu712@icloud.com"
+							className="flex items-center gap-1.5 transition-colors hover:text-foreground"
+						>
+							<Mail className="size-4" />
+							shanwu712@icloud.com
+						</a>
+						<a
+							href="https://github.com/shanwu712"
+							target="_blank"
+							rel="noreferrer"
+							className="flex items-center gap-1.5 transition-colors hover:text-foreground"
+						>
+							<Github className="size-4" />
+							GitHub
+						</a>
+					</div>
 				</footer>
 			</div>
 		</div>
@@ -197,6 +190,8 @@ interface PortfolioCardProps {
 	description: string;
 	image: string;
 	details?: string;
+	webURL: string;
+	repoURL: string;
 }
 
 function PortfolioCard({
@@ -204,78 +199,37 @@ function PortfolioCard({
 	description,
 	image,
 	details,
+	webURL,
+	repoURL,
 }: PortfolioCardProps) {
 	return (
-		<Card className="min-w-96 w-[30vw] min-h-[32rem] overflow-hidden transition-all duration-300 hover:shadow-lg">
-			<div className="relative aspect-video overflow-hidden bg-amber-100">
-				<img src={image} alt="HandDripper Logo" />
+		<Card className="overflow-hidden border-0 bg-card shadow-none transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40">
+			<div className="relative aspect-video overflow-hidden bg-secondary">
+				<img src={image} alt={`${title} preview`} className="size-full object-cover" />
 			</div>
 			<CardHeader>
-				<CardTitle>{title}</CardTitle>
-				<CardDescription className="text-stone-700">
+				<CardTitle className="font-display font-normal">{title}</CardTitle>
+				<CardDescription className="text-muted-foreground">
 					{description}
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
 				<div>{details}</div>
 			</CardContent>
-			<CardFooter className="text-xs text-stone-500">
-				{t('furtherInfo')}
+			<CardFooter className="justify-start gap-3 border-t border-border">
+				<Button asChild size="sm">
+					<a href={webURL} target="_blank" rel="noreferrer">
+						<ExternalLink className="size-4" />
+						{t('visitSite')}
+					</a>
+				</Button>
+				<Button asChild size="sm" variant="outline">
+					<a href={repoURL} target="_blank" rel="noreferrer">
+						<Github className="size-4" />
+						{t('viewCode')}
+					</a>
+				</Button>
 			</CardFooter>
 		</Card>
-	);
-}
-
-function NavigationPortfolioCard(item: {
-	title: string;
-	description: string;
-	image: string;
-	details: string;
-	webURL: string;
-	repoURL: string;
-}) {
-	return (
-		<NavigationMenuItem>
-			<NavigationMenuTrigger>
-				<PortfolioCard
-					title={item.title}
-					description={item.description}
-					image={item.image}
-					details={item.details}
-				/>
-			</NavigationMenuTrigger>
-			<NavigationMenuContent className="w-fit">
-				<ul className="flex flex-col gap-2 p-1">
-					<li>
-						<NavigationMenuLink asChild>
-							<a
-								className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-2 no-underline outline-none focus:shadow-md"
-								href={item.webURL}
-							>
-								<div className="mb-0.5 mt-1 font-semibold">{item.title}</div>
-								<p className="text-sm leading-tight text-muted-foreground">
-									{t('checkApp', { title: item.title })}
-								</p>
-							</a>
-						</NavigationMenuLink>
-					</li>
-					<li>
-						<NavigationMenuLink asChild>
-							<a
-								className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-3 no-underline outline-none focus:shadow-md"
-								href={item.repoURL}
-							>
-								<div className="mb-0.5 mt-1 font-semibold">
-									{t('repoOfApp', { title: item.title })}
-								</div>
-								<p className="text-sm leading-tight text-muted-foreground text-nowrap">
-									{t('checkRepo', { title: item.title })}
-								</p>
-							</a>
-						</NavigationMenuLink>
-					</li>
-				</ul>
-			</NavigationMenuContent>
-		</NavigationMenuItem>
 	);
 }

@@ -1,10 +1,9 @@
 {
 	"TSW": "TING HSUAN, WU",
-	"whoAmI": "Who am I?",
+	"brandName": "TingHsuan Wu",
 	"quickIntro": "I am currently a senior student majoring in Japanese at a university in Taiwan and expect to graduate in June 2025. After graduation, I plan to begin my career as a frontend engineer in Japan. With my Japanese/English/Mandarin proficiency and technical skills in frontend development, I aim to make meaningful contributions to both users and the team.",
 	"githubBtn": "Check out my Github profile",
 	"whyFrontend": "Why I Learn Frontend Development?",
-	"frontendRoadmap": "My Frontend Development Self-Learning Roadmap",
 	"whyFrontendDescription": "As a Japanese major student, many of my peers tend to pursue careers in the service industry after graduation. However, I felt that it wasn’t the right fit for me. I actually worked part-time in customer service and realized that I wasn’t very comfortable in an environment where I had to interact with many unfamiliar customers every day.\nOf course, it’s not that I dislike talking to people—I do enjoy working as part of a team—but I prefer a calmer environment where I can make use of specialized skills. That’s why I decided to start learning programming, something I had always been interested in, and gradually became drawn to frontend development.",
 	"howFrontend": "How I Learn Frontend Development?",
 	"howFrontendTitle1": "⌨️ 2024 Feb-Mar. My First Step into Coding",
@@ -16,13 +15,11 @@
 	"howFrontendTitle4": "👩‍💻 2024 Sep-2025 Now. From Learning to Doing",
 	"howFrontendDetails4": "After finishing the advanced JS course on Udemy, I built a small side project with Vanilla JS and used it to apply for internships. I eventually got a frontend internship offer, where I started contributing to real toB/toC SaaS products.\nI started using TypeScript with React in a production environment and collaborated with the team using Git and GitHub. It was a huge step forward turning everything I’d learned into something real.",
 	"mySideProjects": "My Side Projects",
-	"hoverToSee": "Hover to see the links of project website or github repo!",
+	"sideProjectsSubtitle": "A couple of things I've built while learning.",
 	"nihongoDescription": "The first project actually using the techniques I had learned. At that time, I hadn't learned the concept of frontend framework and backend/database yet, so it's built with Vanilla JS, and localStorage for data storage.",
 	"nihongoDetails": "As a Japanese learner, Nihongo Reciter provides a more efficient way to review the vocabularies I recently learned by testing me with vocabularies randomly picked from the list I created.",
 	"handDripperDescription": "After knowing the concept/knowledge of frontend framework based on React.js through online courses, to test my understanding of them, I created HandDripper using TS+React+Vite.",
 	"handDripperDetails": "As a rookie of hand-drip coffee, I faced a few problems when I was trying to make a cup of good coffee. HandDripper is to solve these problems with a bunch of useful features I developed.",
-	"furtherInfo": "For further info, please checkout the readme on github repo",
-	"checkApp": "Check out the {{title}} app!",
-	"repoOfApp": "Github Repository of {{title}}",
-	"checkRepo": "Check out the source code of {{title}} on github!"
+	"visitSite": "Visit site",
+	"viewCode": "View code"
 }

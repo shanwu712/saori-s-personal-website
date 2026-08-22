@@ -25,7 +25,7 @@ export function LanguagesToggle() {
 					aria-label="English"
 					className={`px-3 py-2 ${
 						i18n.language === 'en'
-							? 'bg-slate-200  dark:bg-slate-700 font-medium '
+							? 'bg-primary text-primary-foreground font-medium'
 							: 'text-muted-foreground'
 					}`}
 				>
@@ -36,7 +36,7 @@ export function LanguagesToggle() {
 					aria-label="Japanese"
 					className={`px-3 py-2 ${
 						i18n.language === 'ja'
-							? 'bg-slate-200 dark:bg-slate-700 font-medium'
+							? 'bg-primary text-primary-foreground font-medium'
 							: 'text-muted-foreground'
 					}`}
 				>
